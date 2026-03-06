@@ -15,10 +15,19 @@ app.use(cors());
 const port = process.env.PORT || 3001;
 
 app.use(express.json());
+
+// Health check endpoint
+app.get("/", (req, res) => {
+    res.json({ message: "Footwear API is running" });
+});
+
 app.use("/footwear", footwearRoutes);
 
 connectDB().then(() => {
     app.listen(port, () => {
-        console.log(`http://localhost:${port}/footwear`);
+        console.log(`Server running on port ${port}`);
     });
+}).catch((error) => {
+    console.error("Failed to connect to MongoDB:", error);
+    process.exit(1);
 });
