@@ -56,7 +56,7 @@ const FootDetailPage = () => {
     }
     setSaving(true);
     try {
-      await api.put(`/footwear/${id}`, {
+      await api.put(`/${id}`, {
         type: footwear.type,
         category: footwear.category,
         price: Number(footwear.price),
