@@ -14,7 +14,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchFootwear = async () => {
       try {
-        const res = await api.get("/footwear");
+        const res = await api.get("/");
         setFootwear(res.data);
       } catch (error) {
         toast.error("Failed to load footwear");
