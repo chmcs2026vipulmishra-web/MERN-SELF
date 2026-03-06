@@ -13,7 +13,7 @@ const FootCard = ({ footwear, setFootwear }) => {
 
   const handleDelete = async () => {
     try {
-      await api.delete(`/footwear/${footwear._id}`);
+      await api.delete(`/${footwear._id}`);
       setFootwear((prev) => prev.filter((f) => f._id !== footwear._id));
       toast.success("Footwear deleted successfully");
     } catch (error) {
