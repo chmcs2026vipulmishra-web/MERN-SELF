@@ -25,7 +25,7 @@ app.use("/footwear", footwearRoutes);
 
 connectDB().then(() => {
     app.listen(port, () => {
-        console.log(`Server running on port ${port}`);
+        console.log(`http://localhost:${port}/footwear`);
     });
 }).catch((error) => {
     console.error("Failed to connect to MongoDB:", error);
