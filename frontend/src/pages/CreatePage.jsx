@@ -143,10 +143,8 @@ const CreatePage = () => {
                     className={`btn btn-primary relative overflow-hidden transition-all duration-300 bg-green-600 text-[20] px-6 py-3
                 ${loading ? "opacity-70 cursor-not-allowed" : "hover:scale-105 hover:shadow-lg"}`}
                   >
-                    {/* Animated background highlight */}
                     <span className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-20 transition duration-300"></span>
 
-                    {/* Button text */}
                     <span className="relative z-10 flex items-center gap-2">
                       {loading ? (
                         <>

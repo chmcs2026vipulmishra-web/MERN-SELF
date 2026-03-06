@@ -9,7 +9,7 @@ const HomePage = () => {
   const [footwear, setFootwear] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const [sortOrder, setSortOrder] = useState(""); // 🔹 new state
+  const [sortOrder, setSortOrder] = useState("");
 
   useEffect(() => {
     const fetchFootwear = async () => {
@@ -25,13 +25,11 @@ const HomePage = () => {
     fetchFootwear();
   }, []);
 
-  // 🔹 filter footwear based on search
   let filteredFootwear = footwear.filter((item) =>
     item.type.toLowerCase().includes(search.toLowerCase()) ||
     item.category.toLowerCase().includes(search.toLowerCase())
   );
 
-  // 🔹 sort footwear based on price
   if (sortOrder === "asc") {
     filteredFootwear = [...filteredFootwear].sort((a, b) => a.price - b.price);
   } else if (sortOrder === "desc") {
@@ -52,7 +50,6 @@ const HomePage = () => {
 
         {footwear.length > 0 && (
           <>
-            {/* 🔹 Search + Sort Controls */}
             <div className="flex items-center gap-8 mb-6">
               <input
                 type="text"
@@ -73,12 +70,10 @@ const HomePage = () => {
               </select>
             </div>
 
-            {/* 🔹 Count Display */}
             <div className="mb-6 text-sm text-gray-600">
               {filteredFootwear.length} item(s) found
             </div>
 
-            {/* Footwear Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredFootwear.map((item) => (
                 <FootCard key={item._id} footwear={item} setFootwear={setFootwear} />

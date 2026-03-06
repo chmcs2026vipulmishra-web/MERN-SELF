@@ -10,7 +10,7 @@ const FootCard = ({ footwear, setFootwear }) => {
   const location = useLocation();
   const isActive = location.pathname === `/footwear/${footwear._id}`;
 
-  // 🔹 Delete footwear by ID
+
   const handleDelete = async () => {
     try {
       await api.delete(`/footwear/${footwear._id}`);
@@ -26,14 +26,12 @@ const FootCard = ({ footwear, setFootwear }) => {
 
   return (
     <>
-      {/* CARD */}
       <Link
         to={`/footwear/${footwear._id}`}
         className={`relative block rounded-xl bg-base-100 p-4 border transition-all duration-200 ${
           isActive ? "border-primary shadow-lg" : "border-base-300"
         } hover:border-secondary hover:shadow-xl`}
       >
-        {/* Top Row */}
         <div className="flex text-[12px] justify-between items-start">
           <p className="text-xs text-base-content/60 truncate">Product ID: {footwear._id}</p>
           <span className="inline-flex items-center rounded-md bg-green-400/10 px-2 py-1 text-xs font-medium text-green-400 inset-ring inset-ring-green-500/20">
@@ -41,7 +39,6 @@ const FootCard = ({ footwear, setFootwear }) => {
           </span>
         </div>
 
-        {/* Footwear Info */}
         <div className="mt-4 space-y-2">
           <div className="flex items-center gap-5">
             <ShoppingBag className="size-6 text-teal-600" />
@@ -63,14 +60,12 @@ const FootCard = ({ footwear, setFootwear }) => {
           </p>
         </div>
 
-        {/* Footer */}
         <div className="mt-6 flex justify-between items-center">
           <span className="text-[15px] text-base-content/60">
             {formatDate(new Date(footwear.createdAt))}
           </span>
 
           <div className="flex items-center gap-4">
-            {/* Edit Icon */}
             <div className="relative group">
               <Link to={`/footwear/${footwear._id}`} className="cursor-pointer">
                 <Edit2 className="size-5 text-warning hover:scale-110 transition" />
@@ -80,7 +75,6 @@ const FootCard = ({ footwear, setFootwear }) => {
               </span>
             </div>
 
-            {/* Delete Icon */}
             <div className="relative group">
               <button
                 onClick={(e) => {
@@ -99,7 +93,6 @@ const FootCard = ({ footwear, setFootwear }) => {
         </div>
       </Link>
 
-      {/* Delete Modal */}
       {showModal && (
         <dialog className="modal modal-open">
           <div className="modal-box">
