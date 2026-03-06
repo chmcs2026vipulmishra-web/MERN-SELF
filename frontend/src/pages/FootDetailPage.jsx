@@ -25,7 +25,7 @@ const FootDetailPage = () => {
   useEffect(() => {
     const fetchFootwear = async () => {
       try {
-        const res = await api.get(`/footwear/${id}`);
+        const res = await api.get(`/${id}`);
         setFootwear(res.data);
       } catch (error) {
         console.error("Error in fetching footwear", error);
@@ -56,7 +56,7 @@ const FootDetailPage = () => {
     }
     setSaving(true);
     try {
-      await api.put(`/footwear/${id}`, {
+      await api.put(`/${id}`, {
         type: footwear.type,
         category: footwear.category,
         price: Number(footwear.price),
