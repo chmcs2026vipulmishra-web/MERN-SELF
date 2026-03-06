@@ -18,7 +18,7 @@ const CreatePage = () => {
     setLoading(true);
 
     try {
-      await api.post("/footwear", {
+      await api.post("/", {
         type,
         category,
         price: Number(price),
