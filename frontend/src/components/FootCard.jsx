@@ -29,8 +29,9 @@ const FootCard = ({ footwear, setFootwear }) => {
       {/* CARD */}
       <Link
         to={`/${footwear._id}`}
-        className={`relative block rounded-xl bg-base-100 p-4 border transition-all duration-200 ${isActive ? "border-primary shadow-lg" : "border-base-300"
-          } hover:border-secondary hover:shadow-xl`}
+        className={`relative block rounded-xl bg-base-100 p-4 border transition-all duration-200 ${
+          isActive ? "border-primary shadow-lg" : "border-base-300"
+        } hover:border-secondary hover:shadow-xl`}
       >
         {/* Top Row */}
         <div className="flex text-[12px] justify-between items-start">
@@ -71,9 +72,9 @@ const FootCard = ({ footwear, setFootwear }) => {
           <div className="flex items-center gap-4">
             {/* Edit Icon */}
             <div className="relative group">
-              <Link to={`/${footwear._id}`} className="cursor-pointer"></Link>
-              <Edit2 className="size-5 text-warning hover:scale-110 transition cursor-pointer" />
-
+              <Link to={`/${footwear._id}`} className="cursor-pointer">
+                <Edit2 className="size-5 text-warning hover:scale-110 transition" />
+              </Link>
               <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-warning text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition duration-200">
                 Edit
               </span>
