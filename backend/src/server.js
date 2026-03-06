@@ -18,7 +18,7 @@ app.use(cors());
 const port = process.env.PORT || 3001;
 
 app.use(express.json());
-app.use("/footwear", footwearRoutes);
+app.use("/", footwearRoutes);
 
 connectDB().then(() => {
     app.listen(port, () => {
