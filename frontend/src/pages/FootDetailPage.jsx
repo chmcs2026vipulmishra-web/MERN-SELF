@@ -25,7 +25,7 @@ const FootDetailPage = () => {
   useEffect(() => {
     const fetchFootwear = async () => {
       try {
-        const res = await api.get(`/${id}`);
+        const res = await api.get(`/footwear/${id}`);
         setFootwear(res.data);
       } catch (error) {
         console.error("Error in fetching footwear", error);
