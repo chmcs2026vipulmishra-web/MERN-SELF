@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const FootCard = ({ footwear, setFootwear }) => {
   const [showModal, setShowModal] = useState(false);
   const location = useLocation();
-  const isActive = location.pathname === `/${footwear._id}`;
+  const isActive = location.pathname === `/footwear/${footwear._id}`;
 
   // 🔹 Delete footwear by ID
   const handleDelete = async () => {
