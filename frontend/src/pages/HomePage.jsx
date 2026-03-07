@@ -15,9 +15,11 @@ const HomePage = () => {
     const fetchFootwear = async () => {
       try {
         const res = await api.get("/");
-        setFootwear(res.data);
+        // Ensure data is always an array
+        setFootwear(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
         toast.error("Failed to load footwear");
+        setFootwear([]);
       } finally {
         setLoading(false);
       }
@@ -25,10 +27,10 @@ const HomePage = () => {
     fetchFootwear();
   }, []);
 
-  let filteredFootwear = footwear.filter((item) =>
+  let filteredFootwear = Array.isArray(footwear) ? footwear.filter((item) =>
     item.type.toLowerCase().includes(search.toLowerCase()) ||
     item.category.toLowerCase().includes(search.toLowerCase())
-  );
+  ) : [];
 
   if (sortOrder === "asc") {
     filteredFootwear = [...filteredFootwear].sort((a, b) => a.price - b.price);
