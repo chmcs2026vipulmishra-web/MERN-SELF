@@ -27,7 +27,7 @@ const FootCard = ({ footwear, setFootwear }) => {
   return (
     <>
       <Link
-        to={`/footwear/${footwear._id}`}
+        to={`/${footwear._id}`}
         className={`relative block rounded-xl bg-base-100 p-4 border transition-all duration-200 ${
           isActive ? "border-primary shadow-lg" : "border-base-300"
         } hover:border-secondary hover:shadow-xl`}
