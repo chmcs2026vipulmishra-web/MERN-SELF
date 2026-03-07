@@ -14,7 +14,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchFootwear = async () => {
       try {
-        const res = await api.get("/");
+        const res = await api.get("/footwear");
         // Ensure data is always an array
         setFootwear(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
