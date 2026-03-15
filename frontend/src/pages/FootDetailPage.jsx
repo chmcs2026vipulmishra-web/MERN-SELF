@@ -40,7 +40,7 @@ const FootDetailPage = () => {
   const handleDelete = async () => {
     if (!window.confirm("Are you sure you want to delete this footwear?")) return;
     try {
-      await api.delete(`/${id}`);
+      await api.delete(`/footwear/${id}`);
       toast.success("Footwear deleted successfully");
       navigate("/");
     } catch (error) {
@@ -56,7 +56,7 @@ const FootDetailPage = () => {
     }
     setSaving(true);
     try {
-      await api.put(`/${id}`, {
+      await api.put(`/footwear/${id}`, {
         type: footwear.type,
         category: footwear.category,
         price: Number(footwear.price),
